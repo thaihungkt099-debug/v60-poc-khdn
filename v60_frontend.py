@@ -39,7 +39,7 @@ with st.form("nhap_lieu_form", clear_on_submit=True):
             # 2. Bắn dữ liệu thẳng vào API (Máy chủ đang chạy)
             try:
                 # Đảm bảo máy chủ FastAPI ở màn hình đen 1 vẫn đang chạy
-                res = requests.post("http://127.0.0.1:8000/api/v1/cap-nhat-ho-so", json=payload)
+                res = requests.post("https://v60-poc-khdn.onrender.com/api/v1/cap-nhat-ho-so", json=payload)
                 if res.status_code == 200:
                     st.success(f"✅ Đã cập nhật thành công hồ sơ {ma_hs_v60.strip().upper()} lên máy chủ V60!")
             except Exception as e:
